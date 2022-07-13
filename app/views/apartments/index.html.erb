@@ -15,7 +15,7 @@
     <% @apartments.each do |apartment| %>
       <tr>
         <td><%= apartment.number %></td>
-        <td><%= apartment.building %></td>
+        <td><%= apartment.building.name %></td>
         <td><%= link_to 'Show', building_apartment_path(@building,apartment) %></td>
         <td><%= link_to 'Edit', edit_building_apartment_path(@building,apartment) %></td>
         <td><%= link_to 'Destroy', building_apartment_path(@building,apartment), method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -3,7 +3,11 @@ class BuildingsController < ApplicationController
 
   # GET /buildings or /buildings.json
   def index
-    @buildings = Building.all
+    # @buildings = Building.all -> Tenemos el problema de N + 1 QUERY
+    # @buildings = Building.includes(:apartments) -> SOLUCION 1
+    @buildings = Building.includes(:apartments).references(:apartments)
+    
+
   end
 
   # GET /buildings/1 or /buildings/1.json
