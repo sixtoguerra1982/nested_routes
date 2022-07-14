@@ -17,6 +17,7 @@ class BuildingsController < ApplicationController
   # GET /buildings/new
   def new
     @building = Building.new
+    5.times { @building.apartments.build }
   end
 
   # GET /buildings/1/edit
@@ -69,6 +70,7 @@ class BuildingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def building_params
-      params.require(:building).permit(:name)
+      # params.require(:building).permit(:name)
+      params.require(:building).permit(:name, apartments_attributes: [:id, :number, :sale_price, :_destroy])
     end
 end

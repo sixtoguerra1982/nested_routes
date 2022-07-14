@@ -16,7 +16,41 @@
     <%= form.text_field :name %>
   </div>
 
+
+  <p>Apartment fields </p>
+  <%= form.fields_for :apartments do |apartment_form | %>
+      <%= apartment_form .label :number %> 
+      <%= apartment_form .text_field :number %>
+      <%= apartment_form .label :sale_price %>
+      <%= apartment_form .text_field :sale_price %>
+  <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+
+1:n * 
+1:1
+n:n
+recursiva -> sobre si mismo
+un registro que se relaciona con otro pero en la misma tabla
+
+
+
+
+rails g model worker name boss_id:integer
+
+Workers
+________
+name
+boos_id -> nil -> en caso de un trabajador sin jefe valor nil
+                  id del jefe
+
+id -> Name -> boos_id
+1 , Andres Perez , nil
+2 , Sixto Guerra , 1
+3 , Brayan Benitez, 1
+
+gem erd

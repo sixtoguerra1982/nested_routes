@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_11_234659) do
+ActiveRecord::Schema.define(version: 2022_07_13_231902) do
 
   create_table "apartments", force: :cascade do |t|
     t.string "number"
     t.integer "building_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "sale_price"
     t.index ["building_id"], name: "index_apartments_on_building_id"
   end
 
